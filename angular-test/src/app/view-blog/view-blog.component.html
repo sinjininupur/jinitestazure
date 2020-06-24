@@ -1,0 +1,88 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      
+      <mat-toolbar >
+         <img  class="images" src="./assets/img/a5.png" alt="image"/>
+        
+      </mat-toolbar>
+  
+      <mat-toolbar >
+     
+     <Span > Sinjini Roy</Span>
+       </mat-toolbar>
+      <mat-nav-list>
+    
+          <li> <button mat-button routerLink="/">Home</button></li>  
+        <li> <button mat-button routerLink="/about">About Me</button></li>
+        <li>  <button mat-button routerLink="/add-blog">Add Blog</button></li>
+        <li> <button mat-button routerLink="/view-blog">View Blog</button>
+          <router-outlet></router-outlet>    </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>View Blog List</span>
+      </mat-toolbar>
+      
+
+  
+  <p *ngIf="BlogData.length <= 0" class="no-data">There is no blog added yet!</p>
+  
+  <div class="container" *ngIf="BlogData.length > 0">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="_id">
+          <th mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let element">   </td>
+        </ng-container>
+
+  
+        <ng-container matColumnDef="blog_name">
+          <th mat-header-cell *matHeaderCellDef> Author Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.blog_name}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="blog_description">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element"> {{element.blog_description}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="blog_image">
+            <th mat-header-cell *matHeaderCellDef> Image </th>
+            <td mat-cell *matCellDef="let element"> {{element.blog_image}} </td>
+          </ng-container>
+          <ng-container matColumnDef="blog_details">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let element">  </td>
+             
+          </ng-container>
+  
+          <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef> Action </th>
+              <td mat-cell *matCellDef="let element; let i = index;">
+                <button mat-raised-button color="primary" class="push-right"
+                  [routerLink]="['/edit-blog/', element._id]">Edit</button>
+                  <button mat-raised-button color="accent" (click)="deleteBlog(i, element)">Delete</button>
+   
+                     </td>
+            </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</mat-sidenav-content>
+</mat-sidenav-container>

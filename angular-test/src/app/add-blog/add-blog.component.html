@@ -1,0 +1,92 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      
+      <mat-toolbar >
+         <img  class="images" src="./assets/img/a5.png" alt="image"/>
+        
+      </mat-toolbar>
+  
+      <mat-toolbar >
+     
+     <Span > Sinjini Roy</Span>
+       </mat-toolbar>
+      <mat-nav-list>
+    
+          <li> <button mat-button routerLink="/">Home</button></li>  
+        <li> <button mat-button routerLink="/about">About Me</button></li>
+        <li>  <button mat-button routerLink="/add-blog">Add Blog</button></li>
+        <li> <button mat-button routerLink="/view-blog">View Blog</button>
+          <router-outlet></router-outlet>    </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>Add Blog</span>
+      </mat-toolbar>
+  
+  <!-- Form -->
+  <div class="inner-wrapper">
+    <form [formGroup]="blogForm" (ngSubmit)="submitBlogForm()" #resetBlogForm="ngForm" novalidate>
+      <!-- Left block -->
+      <mat-card>
+        <div class="controlers-wrapper" [ngClass]="{'cb-vertival':1 }">
+          <!-- Name -->
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Author name" formControlName="blog_name">
+            <mat-error *ngIf="handleError('blog_name', 'required')">
+              You must provide a<strong>Author name</strong>
+            </mat-error>
+          </mat-form-field>
+  
+         <!-- Email -->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Blog Description" formControlName="blog_description">
+            <mat-error *ngIf="handleError('blog_description', 'required')">
+              You must provide a<strong>blog description</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Blog image" formControlName="blog_image">
+            <mat-error *ngIf="handleError('blog_image', 'required')">
+              You must provide a<strong>blog image</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Blog details" formControlName="blog_details">
+            <mat-error *ngIf="handleError('blog_details', 'required')">
+              You must provide a<strong>blog details</strong>
+            </mat-error>
+            </textarea>
+          </mat-form-field>
+  
+    
+        </div>
+      </mat-card>
+  
+    <!-- Add Content Here -->
+
+  
+      <!-- Submit & Reset -->
+      <mat-card>
+        <div class="full-wrapper button-wrapper">
+          <div class="button-wrapper">
+            <button mat-flat-button color="warn">Submit</button>
+          </div>
+        </div>
+      </mat-card>
+    </form>
+  </div>
+</mat-sidenav-content>
+</mat-sidenav-container>

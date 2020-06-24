@@ -1,0 +1,60 @@
+<mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #drawer class="sidenav" fixedInViewport
+            [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+            [mode]="(isHandset$ | async) ? 'over' : 'side'"
+            [opened]="(isHandset$ | async) === false">
+          
+          <mat-toolbar >
+             <img  class="images" src="./assets/img/a5.png" alt="image"/>
+            
+          </mat-toolbar>
+      
+          <mat-toolbar >
+         
+         <Span > Sinjini Roy</Span>
+           </mat-toolbar>
+          <mat-nav-list>
+        
+                <li> <button mat-button routerLink="/">Home</button></li>  
+            <li> <button mat-button routerLink="/about">About Me</button></li>
+            <li>  <button mat-button routerLink="/add-blog">Add Blog</button></li>
+            <li> <button mat-button routerLink="/view-blog">View Blog</button>
+              <router-outlet></router-outlet>    </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+          <mat-toolbar color="primary">
+            <button
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()"
+              *ngIf="isHandset$ | async">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span>About Me</span>
+          </mat-toolbar>
+
+          <div>
+               
+    
+                 <mat-card-content white-space="pre-wrap;"
+                 overflow-wrap="break-word;">
+    
+                 I am sinjini. I have 14 + years of IT experience in quality and assurance domain. 
+                 I am associated with IBM for more than 11 years now , 
+                 I have it experience spread accross different areas such as test management,  DevOps, 
+                 Test planning and leadership, Agile scrum projects, automation implementation in devops projects
+                    
+             </mat-card-content>
+            </div>
+        <div>
+                      
+             <mat-card-content>
+                    <img  width="10%" height="10%" class="images" src="./assets/img/a4.png" alt="image"/>
+             </mat-card-content>
+                     
+
+            </div>
+       
+    </mat-sidenav-content>
+    </mat-sidenav-container>

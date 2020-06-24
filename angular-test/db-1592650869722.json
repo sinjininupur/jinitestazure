@@ -1,0 +1,44 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "name": "Angular Blog-sinjini",
+      "description": "This is the first example",
+      "price": "40",
+      "imageUrl": "https://source.unsplash.com/1600x900/?product",
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "name": "Angular Blog-sinjini",
+      "description": "This is the second example",
+      "price": "40",
+      "imageUrl": "https://source.unsplash.com/1600x900/?product",
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "name": "Angular Blog-sinjini",
+      "description": "This is the  third example",
+      "price": "40",
+      "imageUrl": "https://source.unsplash.com/1600x900/?product",
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "name": "Angular Blog-sinjini",
+      "description": "This is the fourth example",
+      "price": "40",
+      "imageUrl": "https://source.unsplash.com/1600x900/?product",
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "name": "Angular Blog-sinjini",
+      "description": "This is the fifth example",
+      "price": "40",
+      "imageUrl": "https://source.unsplash.com/1600x900/?product",
+      "quantity": 1
+    }
+  ]
+}

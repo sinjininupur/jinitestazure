@@ -1,0 +1,133 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 300px;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+    color:"primary";
+    margin-top: 30%;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .mat-toolbar.mat-toolbar {
+
+  
+    z-index: 1;
+    white-space:pre-wrap;
+    
+  }
+  
+  mat-form-field.mat-form-field {
+    font-size: 16px;
+  }
+  
+  
+  .controlers-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    flex-flow: row;
+  }
+  .cb-vertival {
+    flex-flow: column;
+  }
+  
+  table{
+    width: 100%;
+   }
+   
+   .mat-column-username {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 28% !important;
+     width: 28% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+   }
+   
+   .mat-column-emailid {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 25% !important;
+     width: 25% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+   }
+   
+   .mat-column-contactno {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 17% !important;
+     width: 17% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+   }
+   
+   .mat-column-userimage {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 8% !important;
+     width: 8% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+   }
+   
+   .mat-column-userActivity {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 10% !important;
+     width: 10% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+   }
+   mat-card-content.mat-card-content {
+  
+    top: 0;
+    z-index: 1;
+    white-space:pre-wrap;
+    overflow-wrap:break-word;
+  }
+  

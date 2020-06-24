@@ -1,0 +1,64 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    
+    <mat-toolbar >
+       <img  class="images" src="./assets/img/a5.png" alt="image"/>
+      
+    </mat-toolbar>
+
+    <mat-toolbar >
+   
+   <Span > Sinjini Roy</Span>
+     </mat-toolbar>
+    <mat-nav-list>
+  
+        
+      <li> <button mat-button routerLink="/about">About Me</button></li>
+      <li>  <button mat-button routerLink="/add-blog">Add Blog</button></li>
+      <li> <button mat-button routerLink="/edit-blog">Edit Blog</button></li>
+      <li> <button mat-button routerLink="/view-blog">View Blog</button>
+      <li> <button mat-button routerLink="/delete-blog">Delete Blog</button>
+        <router-outlet></router-outlet>    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Blog List</span>
+    </mat-toolbar>
+
+        <mat-card *ngFor="let blog of BlogData" style="margin-top:10px;">
+     
+     
+     
+     
+             <mat-card-header color="primary">
+                 <mat-card-title color="yellow">{{blog.blog_name}}</mat-card-title>
+                 <mat-card-subtitle>{{blog.blog_description}}
+                 </mat-card-subtitle>
+             </mat-card-header>
+             <mat-card-content>
+                 <p>
+                     {{blog.details}}
+                 </p>
+                 
+                 <img style="height:100%; width: 100%;" src="{{ blog.blog_image }}" />
+             </mat-card-content>
+             <mat-card-actions>
+           <button mat-button> View Blogs</button>
+         </mat-card-actions>
+         </mat-card>
+     
+     
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

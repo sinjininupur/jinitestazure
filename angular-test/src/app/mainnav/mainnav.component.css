@@ -1,0 +1,27 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 300px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  color:"primary";
+  margin-top: 30%;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+mat-card-content.mat-card-content {
+  
+  top: 0;
+  z-index: 1;
+  white-space:pre-wrap;
+  overflow-wrap:break-word;
+}

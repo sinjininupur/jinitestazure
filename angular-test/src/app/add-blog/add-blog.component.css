@@ -1,0 +1,37 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 300px;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+    color:"primary";
+    margin-top: 30%;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+
+  mat-form-field.mat-form-field {
+    font-size: 16px;
+  }
+
+
+  .controlers-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    flex-flow: row;
+  }
+  .cb-vertival {
+    flex-flow: column;
+  }
+
+  
